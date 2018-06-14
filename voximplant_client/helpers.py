@@ -18,10 +18,10 @@ def append_to_querytring(url: str, **kwargs) -> str:
     """Append a parameter to the url querystring"""
     url = list(urlparse(url))
     query = OrderedDict(parse_qsl(url[4]))
-    query.update(kwargs)
+    query.update(sorted(kwargs.items()))
 
     url[2] = append_slash(url[2])
 
-    url[4] = '&'.join(f'{p}={v}' for p, v in query.items())
+    url[4] = '&'.join('{}={}'.format(p, v) for p, v in query.items())
 
     return urlunparse(url)

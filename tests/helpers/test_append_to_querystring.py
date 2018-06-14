@@ -14,4 +14,7 @@ def test_single_kwarg(input, expected):
 
 
 def test_mulitple_kwargs():
-    assert helpers.append_to_querytring('/test/create', login='z3r0c00l', password='lovesecretgod') == '/test/create/?login=z3r0c00l&password=lovesecretgod'
+    got = helpers.append_to_querytring('/test/create', login='z3r0c00l', password='lovesecretgod')
+
+    assert 'login=z3r0c00l' in got
+    assert 'password=lovesecretgod' in got

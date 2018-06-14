@@ -18,4 +18,4 @@ def client():
 ])
 def test_format_url(client, host, url, expected, monkeypatch):
     client = client(host)
-    assert client.format_url(url) == expected.format(account_id=client.account_id, api_key=client.api_key)
+    assert client.http.format_url(url) == expected.format(account_id=client.http.account_id, api_key=client.http.api_key)
