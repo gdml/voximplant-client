@@ -1,4 +1,5 @@
 
+from voximplant_client.entities.scenarios import VoxImplantScenarios
 from voximplant_client.http import VoximplantHTTPClient
 
 
@@ -10,3 +11,5 @@ class VoximplantClient:
         host: str='https://api.voximplant.com/platform_api',
     ):
         self.http = VoximplantHTTPClient(account_id, api_key, host)
+
+        self.scenarios = VoxImplantScenarios(self)
