@@ -8,21 +8,21 @@ from voximplant_client import VoximplantClient
 
 
 @pytest.fixture
-def client():
+def pure_client():
     """Configured instance of Voximplant Client"""
     return VoximplantClient(
-        host='https://api.host.com:6800',
+        host='https://api.host.com',
         account_id='100500',
-        api_key='b76e5c4f-16b5-47ea-9f92-999815dd3797',
+        api_key='secret',
     )
 
 
 @pytest.fixture
-def mocked_http_client(client, response):
+def client(pure_client, response):
     """Client with blocked requests and requests_mock injected to .m"""
     with requests_mock.Mocker() as m:
-        client.m = m
-        yield client
+        pure_client.m = m
+        yield pure_client
 
 
 @pytest.fixture

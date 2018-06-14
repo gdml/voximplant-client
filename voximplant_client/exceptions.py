@@ -1,0 +1,2 @@
+class VoxImplantClientException(BaseException):
+    pass

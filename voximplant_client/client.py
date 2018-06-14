@@ -1,19 +1,7 @@
-from collections import OrderedDict
-from typing import Iterable
-
 import requests
 
-from voximplant_client import helpers
-
-
-class VoxImplantAPIResult(OrderedDict):
-    @property
-    def result(self) -> Iterable:
-        return self.get('result', [])
-
-
-class VoxImplantClientException(BaseException):
-    pass
+from voximplant_client import exceptions, helpers
+from voximplant_client.result import VoxImplantAPIResult
 
 
 class VoximplantClient:
@@ -36,3 +24,10 @@ class VoximplantClient:
             account_id=self.account_id,
             api_key=self.api_key,
         )
+
+    def get(self, url: str) -> VoxImplantAPIResult:
+        response = requests.get(self.format_url(url))
+        if response.status_code != 200:
+            raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
+
+        return VoxImplantAPIResult(response.json())

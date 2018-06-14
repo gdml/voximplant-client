@@ -1,0 +1,22 @@
+{
+  "result": [
+    {
+      "im_roster_type": "personal",
+      "application_name": "testapp.testclient.voximplant.com",
+      "busy_on_call": false,
+      "im_enabled": false,
+      "modified": "2018-04-16 16:31:41",
+      "application_id": 4379769
+    },
+    {
+      "im_roster_type": "personal",
+      "application_name": "testapp1.testclient.voximplant.com",
+      "busy_on_call": false,
+      "im_enabled": false,
+      "modified": "2018-04-16 16:31:41",
+      "application_id": 4379769
+    }
+  ],
+  "total_count": 2,
+  "count": 2
+}
