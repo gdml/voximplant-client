@@ -5,6 +5,8 @@ from voximplant_client.result import VoxImplantAPIResult
 
 
 class VoximplantHTTPClient:
+    DEFAULT_COUNT = 1000
+
     def __init__(
         self,
         account_id: str,
@@ -32,6 +34,9 @@ class VoximplantHTTPClient:
             raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
 
         return VoxImplantAPIResult(response.json())
+
+    def get_list(self, url: str) -> VoxImplantAPIResult:
+        return self.get(helpers.append_to_querytring(url, count=self.DEFAULT_COUNT))
 
     def post(self, url: str, payload: dict) -> VoxImplantAPIResult:
         """Perform POST request with given payload"""

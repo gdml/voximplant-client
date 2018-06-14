@@ -3,6 +3,22 @@ import pytest
 from voximplant_client import exceptions
 
 
+@pytest.mark.parametrize('method, call', [
+    ['get', lambda client: client.http.get('endpoint')],
+    ['post', lambda client: client.http.post('endpoint', {})],
+])
+def test_auth_params(client, method, call):
+    """Make sure given methods pass authentication parameters in the querystring"""
+    def param_assertions(request, *args):
+        assert 'account_id=100500' in request.url
+        assert 'api_key=secret' in request.url
+
+        return {}
+
+    getattr(client.m, method)('https://api.host.com/endpoint/', json=param_assertions)
+    call(client)
+
+
 def test_get(client, response):
     client.m.get('https://api.host.com/GetApplications/', json=response('GetApplications'))
 
@@ -16,6 +32,17 @@ def test_non_200_get(client):
 
     with pytest.raises(exceptions.VoxImplantClientException):
         client.http.get('GetApplications')
+
+
+def test_get_list(client, monkeypatch):
+    monkeypatch.setattr(client.http, 'DEFAULT_COUNT', 100500)
+
+    def param_assertions(request, *args):
+        assert 'count=100500' in request.url
+        return {}
+
+    client.m.get('https://api.host.com/GetApplications/', json=param_assertions)
+    client.http.get_list('GetApplications')
 
 
 def test_post(client, response):
