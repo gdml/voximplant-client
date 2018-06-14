@@ -26,7 +26,17 @@ class VoximplantHTTPClient:
         )
 
     def get(self, url: str) -> VoxImplantAPIResult:
+        """Perform GET request"""
         response = requests.get(self.format_url(url))
+        if response.status_code != 200:
+            raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
+
+        return VoxImplantAPIResult(response.json())
+
+    def post(self, url: str, payload: dict) -> VoxImplantAPIResult:
+        """Perform POST request with given payload"""
+        response = requests.post(self.format_url(url), data=payload)
+
         if response.status_code != 200:
             raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
 
