@@ -10,7 +10,7 @@ class BaseVoximplantEntity:
     list_endpoint = None
 
     def __init__(self, base_client: 'VoximplantClient'):
-        self.base_client = base_client  # instance of base client, used for interaction between entities
+        self.base_client = base_client  # type: VoxImplantClient
 
     def list(self) -> VoxImplantAPIResult:
         """A list of entities.
