@@ -29,7 +29,7 @@ def client(pure_client, response):
 def response():
     """Fixture reader"""
     def read_file(f):
-        with open(path.join('tests/fixtures/', f) + '.json') as fp:
+        with open(path.join('tests/.fixtures/', f) + '.json') as fp:
             return json.load(fp)
 
     return read_file

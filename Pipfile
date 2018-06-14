@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
+cached-property = "*"
 
 [dev-packages]
 appnope = "*"

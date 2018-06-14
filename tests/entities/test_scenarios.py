@@ -15,4 +15,4 @@ def test_adding(client, response):
         return {}
 
     client.m.post('https://api.host.com/AddScenario/', json=assertions)
-    client.scenarios.add('test.js', './tests/fixtures/test.js')
+    client.scenarios.add('test.js', './tests/.fixtures/test.js')
