@@ -1,6 +1,6 @@
 # Python client for voximplant.com HTTP API
 
-This is a simple client for [voximplant.com](https://voximplant.com) HTTP API. It is intended for ad-hoc scenario running and uploading, but may simple be used for any manipulations.
+This is a simple client for [voximplant.com](https://voximplant.com) HTTP API. It is intended as an ad-hoc scenario runner and uploader, but may easily be used for any API manipulations.
 
 ## Installation
 
@@ -55,6 +55,6 @@ for skill in skills.result:
 # upload new skill
 
 client.http.post('AddSkill', dict(
-	skill_name='joking',
+  skill_name='joking',
 ))
 ```
