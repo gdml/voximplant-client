@@ -1,7 +1,7 @@
 import requests
 
 from voximplant_client import exceptions, helpers
-from voximplant_client.result import VoxImplantAPIResult
+from voximplant_client.result import VoximplantAPIResult
 
 
 class VoximplantHTTPClient:
@@ -27,22 +27,22 @@ class VoximplantHTTPClient:
             api_key=self.api_key,
         )
 
-    def get(self, url: str) -> VoxImplantAPIResult:
+    def get(self, url: str) -> VoximplantAPIResult:
         """Perform GET request"""
         response = requests.get(self.format_url(url))
         if response.status_code != 200:
-            raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
+            raise exceptions.VoximplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
 
-        return VoxImplantAPIResult(response.json())
+        return VoximplantAPIResult(response.json())
 
-    def get_list(self, url: str) -> VoxImplantAPIResult:
+    def get_list(self, url: str) -> VoximplantAPIResult:
         return self.get(helpers.append_to_querytring(url, count=self.DEFAULT_COUNT))
 
-    def post(self, url: str, payload: dict) -> VoxImplantAPIResult:
+    def post(self, url: str, payload: dict) -> VoximplantAPIResult:
         """Perform POST request with given payload"""
         response = requests.post(self.format_url(url), data=payload)
 
         if response.status_code != 200:
-            raise exceptions.VoxImplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
+            raise exceptions.VoximplantClientException('Non-200 returned for {}: {}'.format(url, response.status_code))
 
-        return VoxImplantAPIResult(response.json())
+        return VoximplantAPIResult(response.json())

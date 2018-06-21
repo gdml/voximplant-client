@@ -1,7 +1,7 @@
 
-from voximplant_client.entities.applications import VoxImplantApplications
-from voximplant_client.entities.rules import VoxImplantRules
-from voximplant_client.entities.scenarios import VoxImplantScenarios
+from voximplant_client.entities.applications import VoximplantApplications
+from voximplant_client.entities.rules import VoximplantRules
+from voximplant_client.entities.scenarios import VoximplantScenarios
 from voximplant_client.http import VoximplantHTTPClient
 
 
@@ -14,6 +14,6 @@ class VoximplantClient:
     ):
         self.http = VoximplantHTTPClient(account_id, api_key, host)
 
-        self.applications = VoxImplantApplications(self)
-        self.rules = VoxImplantRules(self)
-        self.scenarios = VoxImplantScenarios(self)
+        self.applications = VoximplantApplications(self)
+        self.rules = VoximplantRules(self)
+        self.scenarios = VoximplantScenarios(self)

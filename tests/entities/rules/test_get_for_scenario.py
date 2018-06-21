@@ -26,5 +26,5 @@ def test_get_or_create(client, scenario, rule_id, response):
 def test_rule_creation_error(client, response):
     client.m.post('https://api.host.com/AddRule/', json=response('BadScenario'))
 
-    with pytest.raises(exceptions.VoxImplantRuleCreationError):
+    with pytest.raises(exceptions.VoximplantRuleCreationError):
         client.rules.get_or_create_for_scenario(app=VALID_APP, scenario='test.js')

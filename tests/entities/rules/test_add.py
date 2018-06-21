@@ -16,7 +16,7 @@ def test_adding_ok(client, response):
 
 
 def test_bad_application_name(client):
-    with pytest.raises(exceptions.VoxImplantBadApplicationNameException):
+    with pytest.raises(exceptions.VoximplantBadApplicationNameException):
         client.rules.add(
             app='noapp.noclient',
             scenario='test.js',

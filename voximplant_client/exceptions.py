@@ -1,10 +1,10 @@
-class VoxImplantClientException(BaseException):
+class VoximplantClientException(BaseException):
     pass
 
 
-class VoxImplantBadApplicationNameException(VoxImplantClientException):
+class VoximplantBadApplicationNameException(VoximplantClientException):
     pass
 
 
-class VoxImplantRuleCreationError(VoxImplantClientException):
+class VoximplantRuleCreationError(VoximplantClientException):
     pass

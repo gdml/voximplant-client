@@ -2,7 +2,7 @@ from collections import OrderedDict
 from typing import Iterable, Optional
 
 
-class VoxImplantAPIResult(OrderedDict):
+class VoximplantAPIResult(OrderedDict):
     @property
     def result(self) -> Iterable:
         return self.get('result', [])

@@ -4,7 +4,7 @@ from voximplant_client import exceptions, helpers
 from voximplant_client.entities.base import BaseVoximplantEntity
 
 
-class VoxImplantRules(BaseVoximplantEntity):
+class VoximplantRules(BaseVoximplantEntity):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._rule_cache = dict()
@@ -12,7 +12,7 @@ class VoxImplantRules(BaseVoximplantEntity):
     def _get_application_id(self, app) -> int:
         application_id = self.base_client.applications.get_id(app)
         if application_id is None:
-            raise exceptions.VoxImplantBadApplicationNameException('Non-existant application name given: {}'.format(app))
+            raise exceptions.VoximplantBadApplicationNameException('Non-existant application name given: {}'.format(app))
 
         return application_id
 
@@ -54,6 +54,6 @@ class VoxImplantRules(BaseVoximplantEntity):
         result = self.add(app, scenario)
 
         if result.isError:
-            raise exceptions.VoxImplantRuleCreationError('Error when creating autorule: {}'.format(result.error['msg']))
+            raise exceptions.VoximplantRuleCreationError('Error when creating autorule: {}'.format(result.error['msg']))
 
         return result['rule_id']

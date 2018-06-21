@@ -1,11 +1,11 @@
 import pytest
 
-from voximplant_client.result import VoxImplantAPIResult
+from voximplant_client.result import VoximplantAPIResult
 
 
 @pytest.fixture
 def result(response):
-    return lambda fixture: VoxImplantAPIResult(response(fixture))
+    return lambda fixture: VoximplantAPIResult(response(fixture))
 
 
 def test_result(result):

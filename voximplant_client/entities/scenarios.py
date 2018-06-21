@@ -1,7 +1,7 @@
 from voximplant_client.entities.base import BaseVoximplantEntity
 
 
-class VoxImplantScenarios(BaseVoximplantEntity):
+class VoximplantScenarios(BaseVoximplantEntity):
     list_endpoint = 'GetScenarios'
 
     def add(self, name: str, file: str):

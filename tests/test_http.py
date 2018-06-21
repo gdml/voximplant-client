@@ -30,7 +30,7 @@ def test_get(client, response):
 def test_non_200_get(client):
     client.m.get('https://api.host.com/GetApplications/', status_code=402)
 
-    with pytest.raises(exceptions.VoxImplantClientException):
+    with pytest.raises(exceptions.VoximplantClientException):
         client.http.get('GetApplications')
 
 
@@ -57,7 +57,7 @@ def test_post(client, response):
 def test_post_non_201(client):
     client.m.post('https://api.host.com/AddScenario/', status_code=403)
 
-    with pytest.raises(exceptions.VoxImplantClientException):
+    with pytest.raises(exceptions.VoximplantClientException):
         client.http.post('AddScenario', {})
 
 

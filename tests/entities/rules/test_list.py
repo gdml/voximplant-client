@@ -12,7 +12,7 @@ def test_list(client):
 
 
 def test_bad_app_name(client):
-    with pytest.raises(exceptions.VoxImplantBadApplicationNameException):
+    with pytest.raises(exceptions.VoximplantBadApplicationNameException):
         client.rules.list('noapp.noclient.voximplant.com')
 
 
