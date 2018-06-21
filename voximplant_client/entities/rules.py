@@ -33,6 +33,19 @@ class VoximplantRules(BaseVoximplantEntity):
             rule_pattern=rule_pattern,
         ))
 
+    def get_id(self, app: str, name: str):
+        """Get rule ID by name"""
+        for rule in self._get_cached_rules_list(app).result:
+            if rule['rule_name'] == name:
+                return rule['rule_id']
+
+    def is_id_valid_for_app(self, app: str, id: int) -> bool:
+        for rule in self._get_cached_rules_list(app).result:
+            if rule['rule_id'] == id:
+                return True
+
+        return False
+
     def _get_cached_rules_list(self, app: str):
         if app not in self._rule_cache:
             self._rule_cache[app] = self.list(app)
@@ -57,3 +70,18 @@ class VoximplantRules(BaseVoximplantEntity):
             raise exceptions.VoximplantRuleCreationError('Error when creating autorule: {}'.format(result.error['msg']))
 
         return result['rule_id']
+
+    def bind_scenario(self, app: str, scenario: str, id: int = None, name: str = None):
+        """Bind scenario to rule by name or id"""
+        rule_id = id or self.get_id(app, name)
+        if rule_id is None:
+            raise exceptions.VoximplantBadRuleNameException('Bad rule name when binding scenario: {}'.format(name))
+
+        if not self.is_id_valid_for_app(app, rule_id):
+            raise exceptions.VoximplantBadRuleId('Bad rule id when binding scneario, name={}, id={}'.format(name, rule_id))
+
+        return self.http.post('BindScenario', payload=dict(
+            application_id=self._get_application_id(app),
+            rule_id=rule_id,
+            scenario_name=scenario,
+        ))

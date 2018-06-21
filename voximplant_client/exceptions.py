@@ -8,3 +8,11 @@ class VoximplantBadApplicationNameException(VoximplantClientException):
 
 class VoximplantRuleCreationError(VoximplantClientException):
     pass
+
+
+class VoximplantBadRuleNameException(VoximplantClientException):
+    pass
+
+
+class VoximplantBadRuleId(VoximplantClientException):
+    pass

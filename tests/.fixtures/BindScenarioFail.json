@@ -1,0 +1,6 @@
+{
+  "error": {
+    "msg": "The 'scenario_id' parameter is invalid.",
+    "code": 132
+  }
+}

@@ -26,3 +26,11 @@ def test_list_cache_is_stored(client, monkeypatch):
 def test_list_cache_is_used(client):
     client.rules._rule_cache[VALID_APP] = '__m0ck__'
     assert client.rules._get_cached_rules_list(VALID_APP) == '__m0ck__'
+
+
+@pytest.mark.parametrize('name, expected', [
+    ['auto-rule-test_fetching_order1', 1770572],
+    ['nonexistant-rule', None],
+])
+def test_get_rule_id(client, name, expected):
+    assert client.rules.get_id(VALID_APP, name) == expected
