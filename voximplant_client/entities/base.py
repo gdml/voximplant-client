@@ -17,12 +17,12 @@ class BaseVoximplantEntity:
 
         For simple endpoints you do not need to define this method, settings class attribute `list_endpoint` would be enough"""
         if self.list_endpoint is None:
-            raise NotImplemented()
+            raise NotImplementedError()
 
         return self.http.get_list(self.list_endpoint)
 
     def add(self) -> VoxImplantAPIResult:
-        raise NotImplemented()
+        raise NotImplementedError()
 
     @property
     def http(self) -> VoximplantHTTPClient:
