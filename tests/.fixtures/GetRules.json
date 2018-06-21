@@ -20,7 +20,7 @@
     {
       "rule_pattern": ".*",
       "application_id": 4379769,
-      "rule_name": "test",
+      "rule_name": "auto-rule-test_fetching_order1",
       "video_conference": false,
       "modified": "2018-05-31 14:07:17",
       "scenarios": [

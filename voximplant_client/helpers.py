@@ -2,6 +2,10 @@ from collections import OrderedDict
 from urllib.parse import parse_qsl, urlparse, urlunparse
 
 
+def get_rule_name_for_scenario(scenario: str) -> str:
+    return 'auto-rule-{}'.format(scenario.replace('.js', ''))
+
+
 def prepend_slash(input: str) -> str:
     return input if input.startswith('/') else '/' + input
 

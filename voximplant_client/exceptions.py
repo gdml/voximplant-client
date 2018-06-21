@@ -4,3 +4,7 @@ class VoxImplantClientException(BaseException):
 
 class VoxImplantBadApplicationNameException(VoxImplantClientException):
     pass
+
+
+class VoxImplantRuleCreationError(VoxImplantClientException):
+    pass

@@ -8,7 +8,6 @@ def test_adding_ok(client, response):
 
     got = client.rules.add(
         app='testapp.testclient.voximplant.com',
-        name='testrule',
         scenario='test.js',
     )
 
@@ -20,7 +19,6 @@ def test_bad_application_name(client):
     with pytest.raises(exceptions.VoxImplantBadApplicationNameException):
         client.rules.add(
             app='noapp.noclient',
-            name='testrule',
             scenario='test.js',
         )
 
@@ -30,7 +28,6 @@ def test_bad_response(client, response):
 
     got = client.rules.add(
         app='testapp.testclient.voximplant.com',
-        name='testrule',
         scenario='test.js',
     )
 

@@ -21,8 +21,11 @@ class VoxImplantRules(BaseVoximplantEntity):
         url = helpers.append_to_querytring('GetRules', application_id=application_id, with_scenarios=True)
         return self.http.get_list(url)
 
-    def add(self, app: str, name: str, scenario: str, rule_pattern: str = '.*'):
+    def add(self, app: str, scenario: str, name: str = None, rule_pattern: str = '.*'):
         """Add a new scenario"""
+        if name is None:
+            name = helpers.get_rule_name_for_scenario(scenario)
+
         return self.http.post('AddRule', payload=dict(
             application_id=self._get_application_id(app),
             rule_name=name,
@@ -41,3 +44,16 @@ class VoxImplantRules(BaseVoximplantEntity):
             for rule_scenario in rule.get('scenarios', []):
                 if rule_scenario['scenario_name'] == scenario:
                     return rule['rule_id']
+
+    def get_or_create_for_scenario(self, app: str, scenario: str) -> int:
+        """Returns existing rule id. If the rule does not exist -- creates one"""
+        existing_rule = self.get_for_scenario(app, scenario)
+        if existing_rule is not None:
+            return existing_rule
+
+        result = self.add(app, scenario)
+
+        if result.isError:
+            raise exceptions.VoxImplantRuleCreationError('Error when creating autorule: {}'.format(result.error['msg']))
+
+        return result['rule_id']
