@@ -1,9 +1,20 @@
 from collections import OrderedDict
+from typing import Optional, Tuple
 from urllib.parse import parse_qsl, urlparse, urlunparse
 
 
 def get_rule_name_for_scenario(scenario: str) -> str:
     return 'auto-rule-{}'.format(scenario.replace('.js', ''))
+
+
+def parse_scenario_name(scenario: str) -> Tuple[Optional[str], str]:
+    result = scenario.split('/')
+
+    if len(result) == 1:
+        return (None, result[0])
+
+    if len(result) >= 2:
+        return tuple(result[:2])
 
 
 def prepend_slash(input: str) -> str:

@@ -9,8 +9,8 @@ from voximplant_client.result import VoximplantAPIResult
 class BaseVoximplantEntity:
     list_endpoint = None
 
-    def __init__(self, base_client: 'VoximplantClient'):
-        self.base_client = base_client  # type: VoximplantClient
+    def __init__(self, client: 'VoximplantClient'):
+        self.client = client  # type: VoximplantClient
 
     def list(self) -> VoximplantAPIResult:
         """A list of entities.
@@ -27,7 +27,7 @@ class BaseVoximplantEntity:
     @property
     def http(self) -> VoximplantHTTPClient:
         """Instance of the app-wide HTTP client"""
-        return self.base_client.http
+        return self.client.http
 
     @cached_property
     def _cached_list(self) -> Iterable[dict]:

@@ -10,7 +10,7 @@ class VoximplantRules(BaseVoximplantEntity):
         self._rule_cache = dict()
 
     def _get_application_id(self, app) -> int:
-        application_id = self.base_client.applications.get_id(app)
+        application_id = self.client.applications.get_id(app)
         if application_id is None:
             raise exceptions.VoximplantBadApplicationNameException('Non-existant application name given: {}'.format(app))
 
