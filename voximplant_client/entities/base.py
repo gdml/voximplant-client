@@ -2,7 +2,7 @@ from typing import Iterable
 
 from cached_property import cached_property
 
-from voximplant_client.http import VoximplantHTTPClient
+from voximplant_client.http_client import VoximplantHTTPClient
 from voximplant_client.result import VoximplantAPIResult
 
 

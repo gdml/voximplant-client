@@ -1,2 +1,3 @@
 def test_import(client):
-    assert client is not None
+    from voximplant_client import VoximplantClient
+    assert VoximplantClient is not None

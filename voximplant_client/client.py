@@ -2,7 +2,7 @@
 from voximplant_client.entities.applications import VoximplantApplications
 from voximplant_client.entities.rules import VoximplantRules
 from voximplant_client.entities.scenarios import VoximplantScenarios
-from voximplant_client.http import VoximplantHTTPClient
+from voximplant_client.http_client import VoximplantHTTPClient
 
 
 class VoximplantClient:

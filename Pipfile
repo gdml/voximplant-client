@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 requests = "*"
 cached-property = "*"
+click = "*"
 
 [dev-packages]
 appnope = "*"
