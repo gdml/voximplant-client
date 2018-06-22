@@ -45,6 +45,7 @@ wcwidth = "*"
 ipython_genutils = "*"
 prompt_toolkit = "*"
 Pygments = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.5"
