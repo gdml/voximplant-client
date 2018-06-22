@@ -14,6 +14,10 @@ setup(
         'Click',
         'requests',
     ],
+    entry_points="""
+        [console_scripts]
+        voximplant = voximplant_client.cli:main
+    """,
     include_package_data=True,
     zip_safe=False,
 )

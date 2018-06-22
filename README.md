@@ -10,23 +10,30 @@ $ pip install voximplant_client
 
 ## CLI Usage
 
-WIP yet
+```sh
+# `VOXIMPLANT_ACCOUNT_ID` and `VOXIMPLANT_API_KEY` environment variables are used
+$ voximplant upload ./test.js  # upload the scenario
 
-## Programmatic Usage
-
-First, you should get your API key at [voximplant management interface](https://manage.voximplant.com/#apiaccess).
-
-```python
-from voximplant_client import VoximplantClient
-
-client = VoximplantClient(
-  account_id='<YOUR_ACCOUNT_ID>'
-  api_key='<YOUR_API_KEY>'
-)
+# explicit account id and api key
+voximplant --account-id=100500 --api-key=<YOUR-key> upload ./test.js
 ```
 
+### Running a scenario
+This client has a special use-case: run an outgoing call scenario within particular app. Voximplant requires a rule for that, so rule will be reated automatically.
 
-Deploying a scenario:
+```sh
+
+$ voximplant start your_app.voximplant.com/test.js
+
+# pass the parameters to the script (json encoded)
+
+$ voximplant start your_app.voximplant.com/test.js --param whattosay --value "Elephants go to the north"
+
+```
+
+## Programmatic usage
+
+Deploy a scenario:
 
 ```python
   client.scenarios.add('test.js', path='./path/to/scenario.js')
@@ -37,14 +44,13 @@ Deploying a scenario:
      client.scenarios.add('test.js', code=f.read())
 ```
 
-
-Running a scenario inside the app (the required rule will be created automaticaly):
+### Run a scenario inside the app
 
 ```python
 client.scenarios.start('app.client.voximplat.com/test.js')  # app_name/scenario_name
 ```
 
-Running random queries for the API:
+### Performing andom queries for the API
 
 ```python
 skills = client.http.get('GetSkills')
