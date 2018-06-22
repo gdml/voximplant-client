@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='voximplant_client',
-    version='0.0.1',
+    version='0.0.2',
     description="Voximplant.com API client.",
     keywords=[],
     url="https://github.com/gdml/voximplant-client/",
@@ -13,6 +13,7 @@ setup(
     install_requires=[
         'Click',
         'requests',
+        'cached-property',
     ],
     entry_points="""
         [console_scripts]
