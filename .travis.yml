@@ -6,8 +6,10 @@ python:
   - "3.5"
 
 script:
-  - flake8
-  - py.test --cov=./
+  - pip install pipenv
+  - pipenv install --dev
+  - pipenv run flake8
+  - pipenv run py.test --cov=./
   - bash <(curl -s https://codecov.io/bash)
 
 deploy:
