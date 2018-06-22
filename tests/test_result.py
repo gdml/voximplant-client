@@ -22,7 +22,7 @@ def test_no_result(result):
 
 @pytest.mark.parametrize('fixture, isError', [
     ['GetApplications', False],
-    ['Error', True],
+    ['error', True],
 ])
 def test_is_error(result, fixture, isError):
     got = result(fixture)
