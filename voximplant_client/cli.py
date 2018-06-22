@@ -29,6 +29,18 @@ def upload(obj: VoximplantClient, file):
             raise click.ClickException('Uploading error: {}'.format(result.error['msg']))
 
 
+@cli.command(short_help='start scenario within the app')
+@argument('scenario', type=click.STRING)
+@pass_obj
+def start(obj: VoximplantClient, scenario):
+    result = obj.scenarios.start(scenario)
+
+    if not result.isError:
+        print('OK')
+    else:
+        raise click.ClickException('Scenario running error: {}'.format(result.error['msg']))
+
+
 def main():
     return cli(
         obj=None,
