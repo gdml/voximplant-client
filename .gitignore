@@ -99,3 +99,4 @@ ENV/
 MANIFEST
 .pytest_cache
 .vscode
+.idea
