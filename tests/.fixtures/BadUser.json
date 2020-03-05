@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 122,
+    "msg": "User name should start with a letter or digit and can contain latin characters, digits, hyphen and must be at least 3 characters long.",
+    "field_name": "user_name"
+  }
+}

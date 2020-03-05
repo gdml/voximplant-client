@@ -1,0 +1,37 @@
+{
+    "count": 2,
+    "result": [
+        {
+            "acd_status": "OFFLINE",
+            "balance": 0.0,
+            "created": "2018-04-16 16:00:31",
+            "fixed_balance": 0.0,
+            "frozen": false,
+            "live_balance": 0.0,
+            "modified": "2019-08-02 12:44:52",
+            "parent_accounting": true,
+            "two_factor_auth_required": false,
+            "user_active": true,
+            "user_display_name": "John Doe",
+            "user_id": 100500,
+            "user_name": "jd"
+        },
+        {
+            "acd_status": "OFFLINE",
+            "balance": 0.0,
+            "created": "2018-04-17 16:53:43",
+            "fixed_balance": 0.0,
+            "frozen": false,
+            "live_balance": 0.0,
+            "modified": "2018-09-11 07:48:50",
+            "parent_accounting": true,
+            "two_factor_auth_required": false,
+            "user_active": true,
+            "user_display_name": "John Doe 1",
+            "user_id": 200500,
+            "user_name": "jd1"
+        }
+    ],
+    "total_count": 2
+}
+
