@@ -11,7 +11,7 @@ class VoximplantHTTPClient:
         self,
         account_id: str,
         api_key: str,
-        host: str='https://api.voximplant.com/platform_api',
+        host: str = 'https://api.voximplant.com/platform_api',
     ):
         self.host = helpers.remove_trailing_slash(host)
         self.account_id = account_id

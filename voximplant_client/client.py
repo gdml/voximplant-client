@@ -10,7 +10,7 @@ class VoximplantClient:
         self,
         account_id: str,
         api_key: str,
-        host: str='https://api.voximplant.com/platform_api',
+        host: str = 'https://api.voximplant.com/platform_api',
     ):
         self.http = VoximplantHTTPClient(account_id, api_key, host)
 

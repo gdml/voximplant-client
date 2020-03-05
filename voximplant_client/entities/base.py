@@ -9,8 +9,8 @@ from voximplant_client.result import VoximplantAPIResult
 class BaseVoximplantEntity:
     list_endpoint = None
 
-    def __init__(self, client: 'VoximplantClient'):
-        self.client = client  # type: VoximplantClient
+    def __init__(self, client: 'VoximplantClient'):  # noqa:F821
+        self.client = client  # type: VoximplantClient  # noqa:F821
 
     def list(self) -> VoximplantAPIResult:
         """A list of entities.
