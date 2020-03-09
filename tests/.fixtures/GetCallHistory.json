@@ -1,0 +1,127 @@
+{
+  "result": [
+    {
+      "rule_name": "incoming-driver",
+      "active": false,
+      "application_id": 7426754,
+      "duration": 74,
+      "account_id": 443858,
+      "application_name": "driver-phone-masking.gdematerial.voximplant.com",
+      "finish_reason": "Normal termination",
+      "other_resource_usage": [],
+      "calls": [
+        {
+          "duration": 73,
+          "transaction_id": 275381110008,
+          "start_time": "2020-02-09 06:03:12",
+          "incoming": true,
+          "record_url": "https:\/\/storage-gw-ru-02.voximplant.com\/vox-records\/2020\/02\/09\/OTE2NTlhMTc5Y2Y2ZDA4M2JhZTY2YmIzYjBhNzFiY2YvaHR0cDovL3d3dy1ydS0zMS0yMjcudm94aW1wbGFudC5jb20vcmVjb3Jkcy8yMDIwLzAyLzA5L0Y3NDdERjU4MzJGNDkwNkEuMTU4MTIyODIwNS43MjUwOTMubXAz?record_id=218147611",
+          "cost": 0.304666,
+          "remote_number_type": "pstn",
+          "local_number": "74999386250",
+          "remote_number": "79250347671",
+          "call_id": 885943376,
+          "successful": true,
+          "direction": "Incoming PSTN RU"
+        },
+        {
+          "duration": 0,
+          "start_time": "2020-02-09 06:03:25",
+          "incoming": false,
+          "cost": 0.0,
+          "remote_number_type": "pstn",
+          "local_number": "79581003705",
+          "remote_number": "79250263713",
+          "call_id": 885943375,
+          "successful": false,
+          "direction": "Russia Mobile"
+        }
+      ],
+      "initiator_address": "185.164.148.240",
+      "call_session_history_id": 1053511035,
+      "media_server_address": "185.164.148.227",
+      "log_file_url": "https:\/\/storage-gw-ru-02.voximplant.com\/vox-logs\/2020\/02\/09\/ZTUxMTY1MDFhMzg5MTQ0OWRjMTk1NDYxOGQxYmM2ZDgvaHR0cDovL3d3dy1ydS0zMS0yMjcudm94aW1wbGFudC5jb20vbG9ncy8yMDIwLzAyLzA5LzA2MDMxMl9DOUNDM0Y1MTgxQzdEREZDLjE1ODEyMjgxOTIuNzI0OTk2XzE4NS4xNjQuMTQ4LjIyNy5sb2c-?sessionid=1053511035",
+      "start_date": "2020-02-09 06:03:12"
+    },
+    {
+      "rule_name": "incoming-driver",
+      "active": false,
+      "application_id": 7426754,
+      "duration": 12,
+      "account_id": 443858,
+      "application_name": "driver-phone-masking.gdematerial.voximplant.com",
+      "finish_reason": "Normal termination",
+      "other_resource_usage": [],
+      "calls": [
+        {
+          "duration": 11,
+          "transaction_id": 275777770008,
+          "start_time": "2020-02-09 06:25:26",
+          "incoming": true,
+          "cost": 0.152333,
+          "remote_number_type": "pstn",
+          "local_number": "74999386250",
+          "remote_number": "79250347671",
+          "call_id": 885960666,
+          "successful": true,
+          "direction": "Incoming PSTN RU"
+        }
+      ],
+      "initiator_address": "185.164.148.240",
+      "call_session_history_id": 1053542801,
+      "media_server_address": "185.164.149.22",
+      "log_file_url": "https:\/\/storage-gw-ru-02.voximplant.com\/vox-logs\/2020\/02\/09\/YTZmOWU1MjQ1Mjk3MTQzYWE0OWJkMzJjNGJkMjhhODgvaHR0cDovL3d3dy1ydS0yNy0yMi52b3hpbXBsYW50LmNvbS9sb2dzLzIwMjAvMDIvMDkvMDYyNTI2X0E0NjI2OEYxQ0EyRTExOTcuMTU4MTIyOTUyNi43Mzc2MjBfMTg1LjE2NC4xNDkuMjIubG9n?sessionid=1053542801",
+      "start_date": "2020-02-09 06:25:26"
+    },
+    {
+      "rule_name": "incoming-driver",
+      "active": false,
+      "application_id": 7426754,
+      "duration": 30,
+      "account_id": 443858,
+      "application_name": "driver-phone-masking.gdematerial.voximplant.com",
+      "finish_reason": "Normal termination",
+      "other_resource_usage": [],
+      "calls": [
+        {
+          "duration": 29,
+          "transaction_id": 275779240008,
+          "start_time": "2020-02-09 06:25:46",
+          "incoming": true,
+          "record_url": "https:\/\/storage-gw-ru-02.voximplant.com\/vox-records\/2020\/02\/09\/NTg2NTM3MTI1NTk3M2YyOTljNjE3NzIwNTIzNmQ4Y2UvaHR0cDovL3d3dy1ydS0yNS0yMzEudm94aW1wbGFudC5jb20vcmVjb3Jkcy8yMDIwLzAyLzA5LzdERThFNTcwQjkzRkY3QTQuMTU4MTIyOTU1OC43NDU3OTcubXAz?record_id=218152042",
+          "cost": 0.152333,
+          "remote_number_type": "pstn",
+          "local_number": "74999386250",
+          "remote_number": "79250347671",
+          "call_id": 885960964,
+          "successful": true,
+          "direction": "Incoming PSTN RU"
+        },
+        {
+          "duration": 0,
+          "start_time": "2020-02-09 06:25:58",
+          "incoming": false,
+          "cost": 0.0,
+          "remote_number_type": "pstn",
+          "local_number": "79581003705",
+          "remote_number": "79250263713",
+          "call_id": 885960963,
+          "successful": false,
+          "direction": "Russia Mobile"
+        }
+      ],
+      "initiator_address": "185.164.148.240",
+      "call_session_history_id": 1053543021,
+      "media_server_address": "185.164.148.231",
+      "log_file_url": "https:\/\/storage-gw-ru-02.voximplant.com\/vox-logs\/2020\/02\/09\/YjBhNGQwYTM2MTg0YzVhMDc0YWMzNmE5NzgyZDJjYWYvaHR0cDovL3d3dy1ydS0yNS0yMzEudm94aW1wbGFudC5jb20vbG9ncy8yMDIwLzAyLzA5LzA2MjU0Nl9EREI3MTFDMEE0ODE2QUUyLjE1ODEyMjk1NDYuNzQ1NzA5XzE4NS4xNjQuMTQ4LjIzMS5sb2c-?sessionid=1053543021",
+      "start_date": "2020-02-09 06:25:46"
+    }
+  ],
+  "total_count": 2512,
+  "timezone": "Etc\/GMT",
+  "warnings": [
+    "Required 'from_date' parameter isn't set.",
+    "Required 'to_date' parameter isn't set."
+  ],
+  "count": 3
+}
