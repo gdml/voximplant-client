@@ -15,6 +15,22 @@ def test_update_ok(client, response):
     assert not got.isError
 
 
+def test_updating_params(client):
+    def assertions(request, *args):
+        assert 'application_id=4379769'in request.text
+        assert 'user_name=jd1'in request.text
+        assert 'some_stuff=doing-it-right'in request.text
+
+        return {}
+
+    client.m.post('https://api.host.com/SetUserInfo/', json=assertions)
+    client.users.update(
+        'testapp.testclient.voximplant.com',
+        'jd1',
+        some_stuff='doing-it-right',
+    )
+
+
 def test_bad_application_name(client):
     with pytest.raises(exceptions.VoximplantBadApplicationNameException):
         client.users.update(

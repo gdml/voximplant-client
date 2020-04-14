@@ -16,6 +16,24 @@ def test_binding_ok(client, response):
     assert not got.isError
 
 
+def test_binding_params(client):
+    def assertions(request, *args):
+        assert 'application_id=4379769'in request.text
+        assert 'user_id=200500'in request.text
+        assert 'acd_queue_id=3345'in request.text
+        assert 'bind=False'in request.text
+
+        return {}
+
+    client.m.post('https://api.host.com/BindUserToQueue/', json=assertions)
+    client.queues.bind_user(
+        'testapp.testclient.voximplant.com',
+        'jd1',
+        'support',
+        bind=False,
+    )
+
+
 def test_bad_application_name(client):
     with pytest.raises(exceptions.VoximplantBadApplicationNameException):
         client.queues.bind_user(
