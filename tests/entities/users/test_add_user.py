@@ -30,11 +30,19 @@ def test_bad_application_name(client):
 def test_bad_response(client, response):
     client.m.post('https://api.host.com/AddUser/', json=response('BadUser'))
 
-    got = client.users.add(
-        'testapp.testclient.voximplant.com',
-        'crazyjohn1989',
-        'John Doe',
-        's3CreT',
-    )
+    with pytest.raises(exceptions.VoximplantUserCreationException):
+        client.users.add(
+            'testapp.testclient.voximplant.com',
+            'crazyjohn1989',
+            'John Doe',
+            's3CreT',
+        )
 
-    assert got.isError
+def test_user_already_exists(client):
+    with pytest.raises(exceptions.VoximplantUserAlreadyExistsException):
+        client.users.add(
+            'testapp.testclient.voximplant.com',
+            'jd1',
+            'John Doe',
+            's3CreT',
+        )
