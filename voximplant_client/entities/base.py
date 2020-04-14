@@ -12,7 +12,7 @@ class BaseVoximplantEntity:
     def __init__(self, client: 'VoximplantClient'):  # noqa:F821
         self.client = client  # type: VoximplantClient  # noqa:F821
 
-    def list(self) -> VoximplantAPIResult:
+    def list(self, *args, **kwargs) -> VoximplantAPIResult:
         """A list of entities.
 
         For simple endpoints you do not need to define this method, settings class attribute `list_endpoint` would be enough"""
@@ -21,7 +21,7 @@ class BaseVoximplantEntity:
 
         return self.http.get_list(self.list_endpoint)
 
-    def add(self) -> VoximplantAPIResult:
+    def add(self, *args, **kwargs) -> VoximplantAPIResult:
         raise NotImplementedError()
 
     @property

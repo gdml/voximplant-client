@@ -1,0 +1,27 @@
+{
+    "count": 1,
+    "result": [
+        {
+            "modified": "2014-01-19 14:12:46",
+            "acd_queue_id": 1,
+            "auto_binding": true,
+            "acd_queue_name": "myqueue",
+            "application_id": 1,
+            "acd_queue_priority": 100,
+            "service_probability": 1
+        },
+        {
+            "modified": "2014-01-19 14:12:46",
+            "acd_queue_id": 3345,
+            "auto_binding": true,
+            "acd_queue_name": "support",
+            "application_id": 1,
+            "max_queue_size": 100,
+            "max_waiting_time": 5,
+            "acd_queue_priority": 1,
+            "service_probability": 0.85,
+            "average_service_time": 180
+        }
+    ],
+    "total_count": 17
+}
