@@ -1,7 +1,7 @@
 
 from voximplant_client.entities.applications import VoximplantApplications
 from voximplant_client.entities.history import VoximplantHistory
-from voximplant_client.entities.qeueus import VoximplantQueues
+from voximplant_client.entities.queues import VoximplantQueues
 from voximplant_client.entities.rules import VoximplantRules
 from voximplant_client.entities.scenarios import VoximplantScenarios
 from voximplant_client.entities.users import VoximplantUsers
