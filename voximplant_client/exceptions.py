@@ -10,6 +10,10 @@ class VoximplantQueueDoesNotExistsException(VoximplantClientException):
     pass
 
 
+class VoximplantQueueBindException(VoximplantClientException):
+    pass
+
+
 class VoximplantUserDoesNotExistsException(VoximplantClientException):
     pass
 

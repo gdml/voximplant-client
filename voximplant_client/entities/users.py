@@ -1,3 +1,5 @@
+from typing import Optional
+
 from voximplant_client import exceptions, helpers
 from voximplant_client.entities.base import BaseVoximplantEntity
 from voximplant_client.result import VoximplantAPIResult
@@ -11,7 +13,7 @@ class VoximplantUsers(BaseVoximplantEntity):
 
         return application_id
 
-    def get_id(self, app: str, user_name: str):
+    def get_id(self, app: str, user_name: str) -> Optional[int]:
         for user in self.list(app).result:
             if user['user_name'] == user_name:
                 return int(user['user_id'])

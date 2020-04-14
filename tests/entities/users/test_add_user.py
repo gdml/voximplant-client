@@ -38,6 +38,7 @@ def test_bad_response(client, response):
             's3CreT',
         )
 
+
 def test_user_already_exists(client):
     with pytest.raises(exceptions.VoximplantUserAlreadyExistsException):
         client.users.add(
