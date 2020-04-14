@@ -8,8 +8,8 @@ def test_binding_ok(client, response):
 
     got = client.queues.bind_user(
         'testapp.testclient.voximplant.com',
-        'jd1',
         'support',
+        'jd1',
         bind=False,
     )
 
@@ -28,8 +28,8 @@ def test_binding_params(client):
     client.m.post('https://api.host.com/BindUserToQueue/', json=assertions)
     client.queues.bind_user(
         'testapp.testclient.voximplant.com',
-        'jd1',
         'support',
+        'jd1',
         bind=False,
     )
 
@@ -38,8 +38,8 @@ def test_bad_application_name(client):
     with pytest.raises(exceptions.VoximplantBadApplicationNameException):
         client.queues.bind_user(
             'non-existant.testclient.voximplant.com',
-            'jd1',
             'support',
+            'jd1',
             bind=False,
         )
 
@@ -48,8 +48,8 @@ def test_user_does_not_exist(client):
     with pytest.raises(exceptions.VoximplantUserDoesNotExistsException):
         client.queues.bind_user(
             'testapp.testclient.voximplant.com',
-            'crazyjohn1989',
             'support',
+            'crazyjohn1989',
             bind=False,
         )
 
@@ -58,8 +58,8 @@ def test_queue_does_not_exist(client):
     with pytest.raises(exceptions.VoximplantQueueDoesNotExistsException):
         client.queues.bind_user(
             'testapp.testclient.voximplant.com',
-            'jd1',
             'non-existant',
+            'jd1',
             bind=False,
         )
 
@@ -70,7 +70,7 @@ def test_bad_response(client, response):
     with pytest.raises(exceptions.VoximplantQueueBindException):
         client.queues.bind_user(
             'testapp.testclient.voximplant.com',
-            'jd1',
             'support',
+            'jd1',
             bind=False,
         )

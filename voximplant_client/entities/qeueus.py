@@ -30,7 +30,7 @@ class VoximplantQueues(BaseVoximplantEntity):
         url = helpers.append_to_querytring('GetQueues', application_id=application_id)
         return self.http.get_list(url)
 
-    def bind_user(self, app: str, user_name: str, queue_name: str, bind: bool = True) -> VoximplantAPIResult:
+    def bind_user(self, app: str, queue_name: str, user_name: str, bind: bool = True) -> VoximplantAPIResult:
         queue_id = self.get_id(app, queue_name)
         if not queue_id:
             raise exceptions.VoximplantQueueDoesNotExistsException(queue_name)
